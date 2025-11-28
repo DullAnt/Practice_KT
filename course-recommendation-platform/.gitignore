@@ -1,0 +1,47 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Kotlin
+*.class
+
+# Test results
+test-results/
+test-output/
+
+# Docker
+.docker/
+
+# Environment
+.env
+.env.local
+
+# Compiled files
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.war
+*.ear
+
+# Package files
+*.zip
+*.tar.gz
+*.rar

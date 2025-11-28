@@ -1,0 +1,368 @@
+{
+  "info": {
+    "name": "Course Recommendation Platform",
+    "description": "API коллекция для платформы рекомендаций курсов",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["api", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Courses",
+      "item": [
+        {
+          "name": "Get All Courses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8082/api/courses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "courses"]
+            }
+          }
+        },
+        {
+          "name": "Get Course by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8082/api/courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Course",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Java Programming\",\n    \"description\": \"Learn Java from scratch\",\n    \"category\": \"Programming\",\n    \"instructor\": \"John Doe\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/courses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "courses"]
+            }
+          }
+        },
+        {
+          "name": "Update Course",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Advanced Java Programming\",\n    \"description\": \"Advanced Java concepts\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Course",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8082/api/courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Search Courses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8082/api/courses/search?keyword=Java",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "courses", "search"],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "Java"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Courses by Category",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8082/api/courses/category/Programming",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "courses", "category", "Programming"]
+            }
+          }
+        },
+        {
+          "name": "Get Top Rated Courses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8082/api/courses/top-rated",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["api", "courses", "top-rated"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ratings",
+      "item": [
+        {
+          "name": "Create Rating",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": 1,\n    \"courseId\": 1,\n    \"rating\": 5,\n    \"comment\": \"Excellent course!\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/ratings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "ratings"]
+            }
+          }
+        },
+        {
+          "name": "Update Rating",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": 1,\n    \"courseId\": 1,\n    \"rating\": 4,\n    \"comment\": \"Good course, updated review\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8083/api/ratings",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "ratings"]
+            }
+          }
+        },
+        {
+          "name": "Get Ratings by User",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8083/api/ratings/user/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "ratings", "user", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Ratings by Course",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8083/api/ratings/course/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "ratings", "course", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Course Rating Stats",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8083/api/ratings/course/1/average",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "ratings", "course", "1", "average"]
+            }
+          }
+        },
+        {
+          "name": "Delete Rating",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8083/api/ratings/user/1/course/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["api", "ratings", "user", "1", "course", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Recommendations",
+      "item": [
+        {
+          "name": "Get Recommendations",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8084/api/recommendations/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["api", "recommendations", "1"]
+            }
+          }
+        },
+        {
+          "name": "Recalculate Recommendations",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8084/api/recommendations/1/recalculate",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["api", "recommendations", "1", "recalculate"]
+            }
+          }
+        },
+        {
+          "name": "Get User Preferences",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8084/api/recommendations/1/preferences",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["api", "recommendations", "1", "preferences"]
+            }
+          }
+        },
+        {
+          "name": "Sync Courses",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8084/api/recommendations/sync-courses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["api", "recommendations", "sync-courses"]
+            }
+          }
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8084/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["health"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
